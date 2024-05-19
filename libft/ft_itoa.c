@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:44:53 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/01 14:30:15 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:58:00 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 // Convert integer to string
 // Inputs are interger, char of array and a base(decimal)

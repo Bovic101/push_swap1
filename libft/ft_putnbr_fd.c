@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:22:09 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/01 12:55:57 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:53:09 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 //converting integer to a string of char and print to S/O
 void	ft_putnbr_fd(int n, int fd)

@@ -6,23 +6,23 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:55:37 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/11/03 15:21:17 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:37:20 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Function that counts the no. of node in the linked list
+// Function that counts the number of node
 
 int	ft_lstsize(t_list *lst)
 {
-	int	len_num;
+	int	length;
 
-	len_num = 0;
+	length = 0;
 	while (lst)
 	{
 		lst = lst->next;
-		len_num++;
+		length++;
 	}
-	return (len_num);
+	return (length);
 }
