@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:22:05 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 06:45:31 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_rev_rot(t_list *a, t_list *b, int nbr);
 int		ft_rra_rb(t_list *a, t_list *b, int nbr);
 int		ft_ra_rrb(t_list *a, t_list *b, int nbr);
 int		ft_rotate(t_list *a, t_list *b, int nbr);
-void	rule_3(t_list **a);
+void	partsorted_stack_a(t_list **a);
 int		ft_do_rotate(t_list **a, t_list **b, int nbr, char s);
 int		ft_do_rev_rot(t_list **a, t_list **b, int nbr, char s);
 int		ft_do_rra_rb(t_list **a, t_list **b, int nbr, char s);

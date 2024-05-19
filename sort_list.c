@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:21:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:06:48 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 07:17:45 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,7 @@
 
 #include "push_swap.h"
 
-void	ft_sort_list(t_list **lst_a)
-{
-	t_list	*lst_b;
-	int		i;
-
-	lst_b = NULL;
-	if (ft_lstsize(*lst_a) == 2)
-		swap_a(lst_a);
-	if (ft_lstsize(*lst_a) == 3)
-		rule_3(lst_a);
-	else
-	{
-		lst_b = ft_sort_b(lst_a);
-		lst_a = ft_sort_a(lst_a, &lst_b);
-		i = ft_find_index(*lst_a, ft_find_smaller(*lst_a));
-		if (i < ft_lstsize(*lst_a) - i)
-		{
-			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
-				rotate_a(lst_a);
-		}
-		else
-		{
-			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
-				rev_rot_a(lst_a);
-		}
-	}
-}
-
-void	rule_3(t_list **a)
+void	partsorted_stack_a(t_list **a)
 {
 	if (obtain_value(*a) > obtain_value((*a)->next))
 	{
@@ -79,6 +51,34 @@ void	rule_3(t_list **a)
 	}
 }
 
+void	ft_sort_list(t_list **lst_a)
+{
+	t_list	*lst_b;
+	int		i;
+
+	lst_b = NULL;
+	if (ft_lstsize(*lst_a) == 2)
+		swap_a(lst_a);
+	if (ft_lstsize(*lst_a) == 3)
+		partsorted_stack_a(lst_a);
+	else
+	{
+		lst_b = ft_sort_b(lst_a);
+		lst_a = ft_sort_a(lst_a, &lst_b);
+		i = ft_find_index(*lst_a, ft_find_smaller(*lst_a));
+		if (i < ft_lstsize(*lst_a) - i)
+		{
+			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
+				rotate_a(lst_a);
+		}
+		else
+		{
+			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
+				rev_rot_a(lst_a);
+		}
+	}
+}
+
 t_list	*ft_sort_b(t_list **lst_a)
 {
 	t_list	*lst_b;
@@ -93,7 +93,7 @@ t_list	*ft_sort_b(t_list **lst_a)
 	if (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
 		ft_sort_b_3(lst_a, &lst_b);
 	if (sorted_a == 0)
-		rule_3(lst_a);
+		partsorted_stack_a(lst_a);
 	return (lst_b);
 }
 
