@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   stack_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 22:02:58 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 04:36:48 by vodebunm         ###   ########.fr       */
+/*   Created: 2024/05/02 11:17:20 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/05/19 18:47:03 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
-static void	swap(t_list **lst)
+static void	push(t_list **list_1, t_list **list_2)
 {
 	t_list	*tmp;
 
-	if (*lst == NULL || (*lst)->next == NULL)
+	if (list_2 == NULL)
 		return ;
-	tmp = *lst;
-	*lst = (*lst)->next;
-	tmp->next = tmp->next->next;
-	(*lst)->next = tmp;
+	tmp = *list_2;
+	*list_2 = (*list_2)->next;
+	tmp->next = *list_1;
+	*list_1 = tmp;
 }
 
-void	swap_a(t_list **a)
+void	push_a(t_list **a, t_list **b)
 {
-	ft_printf("sa\n");
-	swap(a);
+	ft_printf("pa\n");
+	push(a, b);
 }
 
-void	swap_b(t_list **b)
+void	push_b(t_list **b, t_list **a)
 {
-	ft_printf("sb\n");
-	swap(b);
-}
-
-void	swap_ss(t_list **a, t_list **b)
-{
-	ft_printf("ss\n");
-	swap(a);
-	swap(b);
+	ft_printf("pb\n");
+	push(b, a);
 }

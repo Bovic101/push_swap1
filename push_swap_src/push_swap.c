@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:38:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 05:52:14 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:44:05 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 t_list	*my_ft_lstnew(char *content)
 {

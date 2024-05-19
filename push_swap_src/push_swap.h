@@ -6,15 +6,15 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:45:31 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:31:56 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
+# include "../libft/libft.h"
 
 void	swap_a(t_list **a);
 void	swap_b(t_list **b);

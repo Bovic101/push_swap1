@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:34:33 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:08:22 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:46:45 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 int	sorted_checker(t_list *stack_a)
 {

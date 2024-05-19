@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 09:31:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:13:06 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:47:29 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 int	search_position_b(t_list *b, int nbr)
 {

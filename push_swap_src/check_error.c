@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 09:28:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 06:18:35 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:28:24 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 void	ft_error(void)
 {

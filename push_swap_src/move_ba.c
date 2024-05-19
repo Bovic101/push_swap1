@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:38:55 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 05:05:11 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:43:48 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 int	ft_rev_rot_a(t_list *a, t_list *b, int nbr)
 {

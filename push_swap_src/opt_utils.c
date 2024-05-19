@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 23:44:15 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 05:51:44 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:43:56 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_src/push_swap.h"
 
 int	ft_do_rotate(t_list **a, t_list **b, int nbr, char s)
 {
