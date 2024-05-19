@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:21:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/03 16:22:04 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 06:06:48 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	ft_sort_list(t_list **lst_a)
 {
@@ -41,12 +41,12 @@ void	ft_sort_list(t_list **lst_a)
 		i = ft_find_index(*lst_a, ft_find_smaller(*lst_a));
 		if (i < ft_lstsize(*lst_a) - i)
 		{
-			while (get_content(*lst_a) != ft_find_smaller(*lst_a))
+			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
 				rotate_a(lst_a);
 		}
 		else
 		{
-			while (get_content(*lst_a) != ft_find_smaller(*lst_a))
+			while (obtain_value(*lst_a) != ft_find_smaller(*lst_a))
 				rev_rot_a(lst_a);
 		}
 	}
@@ -54,12 +54,12 @@ void	ft_sort_list(t_list **lst_a)
 
 void	rule_3(t_list **a)
 {
-	if (get_content(*a) > get_content((*a)->next))
+	if (obtain_value(*a) > obtain_value((*a)->next))
 	{
-		if (get_content(*a) < get_content((*a)->next->next))
+		if (obtain_value(*a) < obtain_value((*a)->next->next))
 			swap_a(a);
-		else if (get_content(*a) > get_content((*a)->next->next)
-			&& get_content((*a)->next) < get_content((*a)->next->next))
+		else if (obtain_value(*a) > obtain_value((*a)->next->next)
+			&& obtain_value((*a)->next) < obtain_value((*a)->next->next))
 			rotate_a(a);
 		else
 		{
@@ -67,11 +67,11 @@ void	rule_3(t_list **a)
 			swap_a(a);
 		}
 	}
-	else if (get_content(*a) < get_content((*a)->next))
+	else if (obtain_value(*a) < obtain_value((*a)->next))
 	{
-		if (get_content(*a) > get_content((*a)->next->next))
+		if (obtain_value(*a) > obtain_value((*a)->next->next))
 			rev_rot_a(a);
-		else if (get_content((*a)->next) > get_content((*a)->next->next))
+		else if (obtain_value((*a)->next) > obtain_value((*a)->next->next))
 		{
 			swap_a(a);
 			rotate_a(a);
@@ -85,7 +85,7 @@ t_list	*ft_sort_b(t_list **lst_a)
 	int		sorted_a;
 
 	lst_b = NULL;
-	sorted_a = ft_sorted(*lst_a);
+	sorted_a = sorted_checker(*lst_a);
 	if (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
 		push_b(&lst_b, lst_a);
 	if (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
@@ -103,21 +103,21 @@ void	ft_sort_b_3(t_list **lst_a, t_list **lst_b)
 	int		sorted_a;
 	t_list	*temp;
 
-	sorted_a = ft_sorted(*lst_a);
+	sorted_a = sorted_checker(*lst_a);
 	while (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
 	{
 		temp = *lst_a;
 		i = ft_choose_rotate_ab(*lst_a, *lst_b);
 		while (i >= 0)
 		{
-			if (i == ft_rotate(*lst_a, *lst_b, get_content(temp)))
-				i = ft_do_rotate(lst_a, lst_b, get_content(temp), 'a');
-			else if (i == ft_rev_rot(*lst_a, *lst_b, get_content(temp)))
-				i = ft_do_rev_rot(lst_a, lst_b, get_content(temp), 'a');
-			else if (i == ft_ra_rrb(*lst_a, *lst_b, get_content(temp)))
-				i = ft_do_ra_rrb(lst_a, lst_b, get_content(temp), 'a');
-			else if (i == ft_rra_rb(*lst_a, *lst_b, get_content(temp)))
-				i = ft_do_rra_rb(lst_a, lst_b, get_content(temp), 'a');
+			if (i == ft_rotate(*lst_a, *lst_b, obtain_value(temp)))
+				i = ft_do_rotate(lst_a, lst_b, obtain_value(temp), 'a');
+			else if (i == ft_rev_rot(*lst_a, *lst_b, obtain_value(temp)))
+				i = ft_do_rev_rot(lst_a, lst_b, obtain_value(temp), 'a');
+			else if (i == ft_ra_rrb(*lst_a, *lst_b, obtain_value(temp)))
+				i = ft_do_ra_rrb(lst_a, lst_b, obtain_value(temp), 'a');
+			else if (i == ft_rra_rb(*lst_a, *lst_b, obtain_value(temp)))
+				i = ft_do_rra_rb(lst_a, lst_b, obtain_value(temp), 'a');
 			else
 				temp = temp->next;
 		}
@@ -135,17 +135,17 @@ t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b)
 		i = ft_choose_rotate_ba(*lst_a, *lst_b);
 		while (i >= 0)
 		{
-			if (i == ft_rotate_a(*lst_a, *lst_b, get_content(temp)))
-				i = ft_do_rotate(lst_a, lst_b, get_content(temp), 'b');
+			if (i == ft_rotate_a(*lst_a, *lst_b, obtain_value(temp)))
+				i = ft_do_rotate(lst_a, lst_b, obtain_value(temp), 'b');
 			else if (i == ft_ra_rrb_a(*lst_a, *lst_b,
-					get_content(temp)))
-				i = ft_do_ra_rrb(lst_a, lst_b, get_content(temp), 'b');
+					obtain_value(temp)))
+				i = ft_do_ra_rrb(lst_a, lst_b, obtain_value(temp), 'b');
 			else if (i == ft_rev_rot_a(*lst_a, *lst_b,
-					get_content(temp)))
-				i = ft_do_rev_rot(lst_a, lst_b, get_content(temp), 'b');
+					obtain_value(temp)))
+				i = ft_do_rev_rot(lst_a, lst_b, obtain_value(temp), 'b');
 			else if (i == ft_rra_rb_a(*lst_a, *lst_b,
-					get_content(temp)))
-				i = ft_do_rra_rb(lst_a, lst_b, get_content(temp), 'b');
+					obtain_value(temp)))
+				i = ft_do_rra_rb(lst_a, lst_b, obtain_value(temp), 'b');
 			else
 				temp = temp->next;
 		}

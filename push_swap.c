@@ -6,11 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:38:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/01 21:55:46 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 05:52:14 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 t_list	*my_ft_lstnew(char *content)
 {
@@ -21,7 +21,7 @@ t_list	*my_ft_lstnew(char *content)
 	return (ft_lstnew(tmp));
 }
 
-int	get_content(t_list *elem)
+int	obtain_value(t_list *elem)
 {
 	return (*((int *)(elem->content)));
 }
@@ -33,7 +33,7 @@ void	print_list(t_list *a)
 	temp_a = a;
 	while (temp_a != 0)
 	{
-		ft_printf("%d\n", get_content(temp_a));
+		ft_printf("%d\n", obtain_value(temp_a));
 		temp_a = temp_a->next;
 	}
 }
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&a, temp);
 		i++;
 	}
-	if (ft_sorted(a) == 0)
+	if (sorted_checker(a) == 0)
 		ft_sort_list(&a);
 	ft_lstclear(&a, free);
 	return (0);

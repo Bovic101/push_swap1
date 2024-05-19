@@ -6,22 +6,22 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 22:02:58 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/02 11:13:27 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 04:36:48 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	swap(t_list **lst)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
 	if (*lst == NULL || (*lst)->next == NULL)
 		return ;
-	temp = *lst;
+	tmp = *lst;
 	*lst = (*lst)->next;
-	temp->next = temp->next->next;
-	(*lst)->next = temp;
+	tmp->next = tmp->next->next;
+	(*lst)->next = tmp;
 }
 
 void	swap_a(t_list **a)

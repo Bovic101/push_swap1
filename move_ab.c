@@ -6,49 +6,33 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:47:32 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/06 19:47:50 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 05:37:32 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "../includes/push_swap.h"
-
-int	ft_rev_rot(t_list *a, t_list *b, int nbr)
-{
-	int	i;
-	int	place_b;
-	int	index_a;
-
-	place_b = ft_find_place_b(b, nbr);
-	index_a = ft_find_index(a, nbr);
-	i = 0;
-	if (place_b != 0)
-		i = ft_lstsize(b) - place_b;
-	if ((i < (ft_lstsize(a) - index_a)) && index_a)
-		i = ft_lstsize(a) - index_a;
-	return (i);
-}
+#include "push_swap.h"
 
 int	ft_rotate(t_list *a, t_list *b, int nbr)
 {
 	int	i;
-	int	index;
+	int	count;
 
-	i = ft_find_place_b(b, nbr);
-	index = ft_find_index(a, nbr);
-	if (i < index)
-		i = index;
+	i = search_position_b(b, nbr);
+	count = ft_find_index(a, nbr);
+	if (i < count)
+		i = count;
 	return (i);
 }
 
 int	ft_ra_rrb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
-	int	place_b;
+	int	position_b;
 
 	i = 0;
-	place_b = ft_find_place_b(b, nbr);
-	if (place_b != 0)
-		i = ft_lstsize(b) - place_b;
+	position_b = search_position_b(b, nbr);
+	if (position_b != 0)
+		i = ft_lstsize(b) - position_b;
 	i = ft_find_index(a, nbr) + i;
 	return (i);
 }
@@ -56,12 +40,28 @@ int	ft_ra_rrb(t_list *a, t_list *b, int nbr)
 int	ft_rra_rb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
-	int	index;
+	int	count;
 
 	i = 0;
-	index = ft_find_index(a, nbr);
-	if (index != 0)
-		i = ft_lstsize(a) - index;
-	i = ft_find_place_b(b, nbr) + i;
+	count = ft_find_index(a, nbr);
+	if (count != 0)
+		i = ft_lstsize(a) - count;
+	i = search_position_b(b, nbr) + i;
+	return (i);
+}
+
+int	ft_rev_rot(t_list *a, t_list *b, int nbr)
+{
+	int	i;
+	int	position_b;
+	int	count_a;
+
+	position_b = search_position_b(b, nbr);
+	count_a = ft_find_index(a, nbr);
+	i = 0;
+	if (position_b != 0)
+		i = ft_lstsize(b) - position_b;
+	if ((i < (ft_lstsize(a) - count_a)) && count_a)
+		i = ft_lstsize(a) - count_a;
 	return (i);
 }

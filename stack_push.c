@@ -6,22 +6,22 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 11:17:20 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/02 11:17:47 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 04:52:34 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	push(t_list **list_1, t_list **list_2)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
 	if (list_2 == NULL)
 		return ;
-	temp = *list_2;
+	tmp = *list_2;
 	*list_2 = (*list_2)->next;
-	temp->next = *list_1;
-	*list_1 = temp;
+	tmp->next = *list_1;
+	*list_1 = tmp;
 }
 
 void	push_a(t_list **a, t_list **b)

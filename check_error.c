@@ -6,25 +6,16 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 09:28:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/05 09:29:20 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/19 06:18:35 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
-int	ft_duplicate(t_list *lst, int n)
+void	ft_error(void)
 {
-	while (lst)
-	{
-		if (get_content(lst) != n)
-			lst = lst->next;
-		else
-		{
-			return (1);
-			break ;
-		}
-	}
-	return (0);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 int	ft_check_error(char *argv, t_list *temp)
@@ -34,7 +25,7 @@ int	ft_check_error(char *argv, t_list *temp)
 	int		len;
 
 	s1 = argv;
-	s2 = ft_itoa(get_content(temp));
+	s2 = ft_itoa(obtain_value(temp));
 	len = ft_strlen(argv);
 	if (ft_strncmp(s1, s2, len) != 0)
 	{
@@ -45,8 +36,17 @@ int	ft_check_error(char *argv, t_list *temp)
 	return (0);
 }
 
-void	ft_error(void)
+int	ft_duplicate(t_list *lst, int n)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	while (lst)
+	{
+		if (obtain_value(lst) != n)
+			lst = lst->next;
+		else
+		{
+			return (1);
+			break ;
+		}
+	}
+	return (0);
 }
