@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 03:33:49 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/20 01:57:08 by vodebunm         ###   ########.fr       */
+/*   Created: 2024/05/02 03:37:03 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/05/20 02:31:55 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap_src/push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list	*new_lst;
+	t_list	*new_d;
+
+	new_lst = NULL;
 	while (lst)
 	{
-		f(lst->content);
+		new_d = ft_lstnew(f(lst->content));
+		if (!new_d)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_d);
 		lst = lst->next;
 	}
+	return (new_lst);
 }

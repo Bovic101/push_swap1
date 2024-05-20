@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 03:33:49 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/20 01:57:08 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/11/03 14:23:46 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/05/20 02:31:30 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap_src/push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+// adds the new mode at the begining of the list
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	new->next = *lst;
+	*lst = new;
 }

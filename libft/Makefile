@@ -6,14 +6,12 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2024/05/19 22:41:29 by vodebunm         ###   ########.fr        #
+#    Updated: 2024/05/20 02:10:52 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Library Name
 NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 # List of source files
@@ -34,24 +32,29 @@ BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
+RM = rm -rf
+AR = ar crs
 
-# Rule to make the library
+
 all: $(NAME)
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(BONUS_OBJS) -o $(NAME)
+# $(NAME): $(OBJS) $(BONUS_OBJS)
+# 	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME): $(OBJS) 
+	$(AR) $(NAME) $(OBJS) 
 
+	
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
 
-# Rule to clean everything
 fclean: clean
 	$(RM) $(NAME)
 
-# Rule to recompile
 re: fclean all
 
-# Phony targets
-.PHONY: all clean fclean re bonus
+bonus:	$(BONUS_OBJS)
+		@ar rcs $(NAME) $(BONUS_OBJS)
+
+.PHONY: all clean fclean re

@@ -6,17 +6,16 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 00:40:14 by vodebunm          #+#    #+#              #
-#    Updated: 2024/05/19 19:42:41 by vodebunm         ###   ########.fr        #
+#    Updated: 2024/05/20 06:29:28 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = ./push_swap_src/push_swap.a
 
 # Source files
 SRCS = $(wildcard ./push_swap_src/*.c)
 
 # Header files and paths
-INCLUDE = include
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 PRINTF_PATH = ft_printf/

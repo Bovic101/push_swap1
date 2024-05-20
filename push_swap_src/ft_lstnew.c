@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 03:33:49 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/20 01:57:08 by vodebunm         ###   ########.fr       */
+/*   Created: 2023/11/02 18:09:57 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/05/20 02:32:01 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+#include "../push_swap_src/push_swap.h"
+//allocate memory to the new mode  and return the new nodd 
+t_list	*ft_lstnew(void *content)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	t_list	*s;
+
+	s = (t_list *)malloc(sizeof(t_list));
+	if (!s)
+		return (NULL);
+	s->content = content;
+	s->next = NULL;
+	return (s);
 }
