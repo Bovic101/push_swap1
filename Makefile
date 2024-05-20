@@ -6,11 +6,11 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 00:40:14 by vodebunm          #+#    #+#              #
-#    Updated: 2024/05/20 06:29:28 by vodebunm         ###   ########.fr        #
+#    Updated: 2024/05/20 07:08:03 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ./push_swap_src/push_swap.a
+NAME = ./push_swap_src/push_swap
 
 # Source files
 SRCS = $(wildcard ./push_swap_src/*.c)
