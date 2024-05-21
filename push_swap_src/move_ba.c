@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:38:55 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 04:34:28 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_rev_rot_a(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_rotate_a(t_list *a, t_list *b, int nbr)
+int	rot_ab_a(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	count_b;
@@ -40,7 +40,7 @@ int	ft_rotate_a(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_rra_rb_a(t_list *a, t_list *b, int nbr)
+int	move_rra_rb_a(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	place_a;
@@ -53,7 +53,7 @@ int	ft_rra_rb_a(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_ra_rrb_a(t_list *a, t_list *b, int nbr)
+int	move_ra_rrb_a(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	count_b;

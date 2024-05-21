@@ -6,13 +6,13 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:47:32 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 04:34:28 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
 
-int	ft_rotate(t_list *a, t_list *b, int nbr)
+int	rot_ab(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	count;
@@ -24,7 +24,7 @@ int	ft_rotate(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_ra_rrb(t_list *a, t_list *b, int nbr)
+int	move_ra_rrb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	position_b;
@@ -37,7 +37,7 @@ int	ft_ra_rrb(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_rra_rb(t_list *a, t_list *b, int nbr)
+int	move_rra_rb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	count;

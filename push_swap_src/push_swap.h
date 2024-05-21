@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 05:43:42 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int		search_bigger_value(t_list *lst);
 int		search_smaller_value(t_list *lst);
 int		search_index_node(t_list *lst, int nbr);
 int		ft_rev_rot(t_list *a, t_list *b, int nbr);
-int		ft_rra_rb(t_list *a, t_list *b, int nbr);
-int		ft_ra_rrb(t_list *a, t_list *b, int nbr);
-int		ft_rotate(t_list *a, t_list *b, int nbr);
+int		move_rra_rb(t_list *a, t_list *b, int nbr);
+int		move_ra_rrb(t_list *a, t_list *b, int nbr);
+int		rot_ab(t_list *a, t_list *b, int nbr);
 void	partsorted_stack_a(t_list **a);
 int		rotate_linked_list(t_list **a, t_list **b, int nbr, char s);
 int		rev_rot_linklist(t_list **a, t_list **b, int nbr, char s);
@@ -55,9 +55,9 @@ int		rot_a_revrot_b(t_list **a, t_list **b, int nbr, char s);
 t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b);
 t_list	*ft_remove_back(t_list **list);
 int		ft_choose_rotate_ba(t_list *a, t_list *b);
-int		ft_ra_rrb_a(t_list *a, t_list *b, int nbr);
-int		ft_rra_rb_a(t_list *a, t_list *b, int nbr);
-int		ft_rotate_a(t_list *a, t_list *b, int nbr);
+int		move_ra_rrb_a(t_list *a, t_list *b, int nbr);
+int		move_rra_rb_a(t_list *a, t_list *b, int nbr);
+int		rot_ab_a(t_list *a, t_list *b, int nbr);
 int		ft_rev_rot_a(t_list *a, t_list *b, int nbr);
 int		search_position_a(t_list *a, int nbr);
 void	ft_lstadd_back(t_list **lst, t_list *new);

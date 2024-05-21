@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:21:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 05:46:28 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,15 @@ t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b)
 		i = ft_choose_rotate_ba(*lst_a, *lst_b);
 		while (i >= 0)
 		{
-			if (i == ft_rotate_a(*lst_a, *lst_b, obtain_value(temp)))
+			if (i == rot_ab_a(*lst_a, *lst_b, obtain_value(temp)))
 				i = rotate_linked_list(lst_a, lst_b, obtain_value(temp), 'b');
-			else if (i == ft_ra_rrb_a(*lst_a, *lst_b,
+			else if (i == move_ra_rrb_a(*lst_a, *lst_b,
 					obtain_value(temp)))
 				i = rot_a_revrot_b(lst_a, lst_b, obtain_value(temp), 'b');
 			else if (i == ft_rev_rot_a(*lst_a, *lst_b,
 					obtain_value(temp)))
 				i = rev_rot_linklist(lst_a, lst_b, obtain_value(temp), 'b');
-			else if (i == ft_rra_rb_a(*lst_a, *lst_b,
+			else if (i == move_rra_rb_a(*lst_a, *lst_b,
 					obtain_value(temp)))
 				i = rev_rot_a_rot_b(lst_a, lst_b, obtain_value(temp), 'b');
 			else
@@ -127,13 +127,13 @@ void	sort_lsta_b(t_list **lst_a, t_list **lst_b)
 		i = ft_choose_rotate_ab(*lst_a, *lst_b);
 		while (i >= 0)
 		{
-			if (i == ft_rotate(*lst_a, *lst_b, obtain_value(temp)))
+			if (i == rot_ab(*lst_a, *lst_b, obtain_value(temp)))
 				i = rotate_linked_list(lst_a, lst_b, obtain_value(temp), 'a');
 			else if (i == ft_rev_rot(*lst_a, *lst_b, obtain_value(temp)))
 				i = rev_rot_linklist(lst_a, lst_b, obtain_value(temp), 'a');
-			else if (i == ft_ra_rrb(*lst_a, *lst_b, obtain_value(temp)))
+			else if (i == move_ra_rrb(*lst_a, *lst_b, obtain_value(temp)))
 				i = rot_a_revrot_b(lst_a, lst_b, obtain_value(temp), 'a');
-			else if (i == ft_rra_rb(*lst_a, *lst_b, obtain_value(temp)))
+			else if (i == move_rra_rb(*lst_a, *lst_b, obtain_value(temp)))
 				i = rev_rot_a_rot_b(lst_a, lst_b, obtain_value(temp), 'a');
 			else
 				temp = temp->next;
