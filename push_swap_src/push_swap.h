@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:09:31 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		search_position_b(t_list *b, int nbr);
 int		search_bigger_value(t_list *lst);
 int		search_smaller_value(t_list *lst);
 int		search_index_node(t_list *lst, int nbr);
-int		ft_rev_rot(t_list *a, t_list *b, int nbr);
+int		rev_rotb(t_list *a, t_list *b, int nbr);
 int		move_rra_rb(t_list *a, t_list *b, int nbr);
 int		move_ra_rrb(t_list *a, t_list *b, int nbr);
 int		rot_ab(t_list *a, t_list *b, int nbr);
@@ -58,7 +58,7 @@ int		ft_choose_rotate_ba(t_list *a, t_list *b);
 int		move_ra_rrb_a(t_list *a, t_list *b, int nbr);
 int		move_rra_rb_a(t_list *a, t_list *b, int nbr);
 int		rot_ab_a(t_list *a, t_list *b, int nbr);
-int		ft_rev_rot_a(t_list *a, t_list *b, int nbr);
+int		rev_rotb_a(t_list *a, t_list *b, int nbr);
 int		search_position_a(t_list *a, int nbr);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);

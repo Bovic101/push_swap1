@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:47:32 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:09:31 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	move_rra_rb(t_list *a, t_list *b, int nbr)
 	return (i);
 }
 
-int	ft_rev_rot(t_list *a, t_list *b, int nbr)
+int	rev_rotb(t_list *a, t_list *b, int nbr)
 {
 	int	i;
 	int	position_b;

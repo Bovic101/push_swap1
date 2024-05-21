@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:25:21 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 13:06:52 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:09:31 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	ft_choose_rotate_ab(t_list *a, t_list *b)
 	t_list	*temp;
 
 	temp = a;
-	i = ft_rev_rot(a, b, obtain_value(a));
+	i = rev_rotb(a, b, obtain_value(a));
 	while (temp != 0)
 	{
 		if (i > rot_ab(a, b, obtain_value(temp)))
 			i = rot_ab(a, b, obtain_value(temp));
-		if (i > ft_rev_rot(a, b, obtain_value(temp)))
-			i = ft_rev_rot(a, b, obtain_value(temp));
+		if (i > rev_rotb(a, b, obtain_value(temp)))
+			i = rev_rotb(a, b, obtain_value(temp));
 		if (i > move_ra_rrb(a, b, obtain_value(temp)))
 			i = move_ra_rrb(a, b, obtain_value(temp));
 		if (i > move_rra_rb(a, b, obtain_value(temp)))
@@ -40,13 +40,13 @@ int	ft_choose_rotate_ba(t_list *a, t_list *b)
 	t_list	*temp;
 
 	temp = b;
-	i = ft_rev_rot_a(a, b, obtain_value(b));
+	i = rev_rotb_a(a, b, obtain_value(b));
 	while (temp != 0)
 	{
 		if (i > rot_ab_a(a, b, obtain_value(temp)))
 			i = rot_ab_a(a, b, obtain_value(temp));
-		if (i > ft_rev_rot_a(a, b, obtain_value(temp)))
-			i = ft_rev_rot_a(a, b, obtain_value(temp));
+		if (i > rev_rotb_a(a, b, obtain_value(temp)))
+			i = rev_rotb_a(a, b, obtain_value(temp));
 		if (i > move_ra_rrb_a(a, b, obtain_value(temp)))
 			i = move_ra_rrb_a(a, b, obtain_value(temp));
 		if (i > move_rra_rb_a(a, b, obtain_value(temp)))
