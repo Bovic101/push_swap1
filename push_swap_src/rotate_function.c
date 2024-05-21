@@ -6,28 +6,11 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 22:05:07 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 18:45:14 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 05:52:56 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
-
-t_list	*ft_remove_front(t_list **list)
-{
-	t_list	*first_node;
-
-	first_node = *list;
-	if (*list == NULL)
-		return (NULL);
-	if (first_node->next == NULL)
-	{
-		*list = NULL;
-		return (first_node);
-	}
-	*list = (*list)->next;
-	first_node->next = NULL;
-	return (first_node);
-}
 
 static void	rotate(t_list **list)
 {
@@ -56,4 +39,21 @@ void	rotate_rr(t_list **a, t_list **b)
 	ft_printf("rr\n");
 	rotate(a);
 	rotate(b);
+}
+
+t_list	*ft_remove_front(t_list **list)
+{
+	t_list	*first_node;
+
+	first_node = *list;
+	if (*list == NULL)
+		return (NULL);
+	if (first_node->next == NULL)
+	{
+		*list = NULL;
+		return (first_node);
+	}
+	*list = (*list)->next;
+	first_node->next = NULL;
+	return (first_node);
 }

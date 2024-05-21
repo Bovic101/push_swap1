@@ -6,13 +6,13 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 23:44:15 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 18:43:56 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 04:24:34 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
 
-int	ft_do_rotate(t_list **a, t_list **b, int nbr, char s)
+int	rotate_linked_list(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -37,7 +37,7 @@ int	ft_do_rotate(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_do_rev_rot(t_list **a, t_list **b, int nbr, char s)
+int	rev_rot_linklist(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -62,7 +62,7 @@ int	ft_do_rev_rot(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_do_rra_rb(t_list **a, t_list **b, int nbr, char s)
+int	rev_rot_a_rot_b(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{
@@ -83,7 +83,7 @@ int	ft_do_rra_rb(t_list **a, t_list **b, int nbr, char s)
 	return (-1);
 }
 
-int	ft_do_ra_rrb(t_list **a, t_list **b, int nbr, char s)
+int	rot_a_revrot_b(t_list **a, t_list **b, int nbr, char s)
 {
 	if (s == 'a')
 	{

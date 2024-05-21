@@ -6,11 +6,21 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 11:12:42 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 18:45:04 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 05:50:01 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
+
+static void	rev_rotate(t_list **list)
+{
+	t_list	*temp;
+
+	if (*list == NULL || (*list)->next == NULL)
+		return ;
+	temp = ft_remove_back(list);
+	ft_lstadd_front(list, temp);
+}
 
 t_list	*ft_remove_back(t_list **list)
 {
@@ -30,16 +40,6 @@ t_list	*ft_remove_back(t_list **list)
 	last_node = first_node->next;
 	first_node->next = NULL;
 	return (last_node);
-}
-
-static void	rev_rotate(t_list **list)
-{
-	t_list	*temp;
-
-	if (*list == NULL || (*list)->next == NULL)
-		return ;
-	temp = ft_remove_back(list);
-	ft_lstadd_front(list, temp);
 }
 
 void	rev_rot_a(t_list **a)

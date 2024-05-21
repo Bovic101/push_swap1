@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:47:32 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/19 18:43:28 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/21 04:34:28 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_rotate(t_list *a, t_list *b, int nbr)
 	int	count;
 
 	i = search_position_b(b, nbr);
-	count = ft_find_index(a, nbr);
+	count = search_index_node(a, nbr);
 	if (i < count)
 		i = count;
 	return (i);
@@ -33,7 +33,7 @@ int	ft_ra_rrb(t_list *a, t_list *b, int nbr)
 	position_b = search_position_b(b, nbr);
 	if (position_b != 0)
 		i = ft_lstsize(b) - position_b;
-	i = ft_find_index(a, nbr) + i;
+	i = search_index_node(a, nbr) + i;
 	return (i);
 }
 
@@ -43,7 +43,7 @@ int	ft_rra_rb(t_list *a, t_list *b, int nbr)
 	int	count;
 
 	i = 0;
-	count = ft_find_index(a, nbr);
+	count = search_index_node(a, nbr);
 	if (count != 0)
 		i = ft_lstsize(a) - count;
 	i = search_position_b(b, nbr) + i;
@@ -57,7 +57,7 @@ int	ft_rev_rot(t_list *a, t_list *b, int nbr)
 	int	count_a;
 
 	position_b = search_position_b(b, nbr);
-	count_a = ft_find_index(a, nbr);
+	count_a = search_index_node(a, nbr);
 	i = 0;
 	if (position_b != 0)
 		i = ft_lstsize(b) - position_b;
