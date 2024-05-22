@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:21:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 13:09:31 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/22 01:29:36 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b)
 	while (*lst_b != 0)
 	{
 		temp = *lst_b;
-		i = ft_choose_rotate_ba(*lst_a, *lst_b);
+		i = opt_rotate_ba(*lst_a, *lst_b);
 		while (i >= 0)
 		{
 			if (i == rot_ab_a(*lst_a, *lst_b, obtain_value(temp)))
@@ -124,7 +124,7 @@ void	sort_lsta_b(t_list **lst_a, t_list **lst_b)
 	while (ft_lstsize(*lst_a) > 3 && sorted_a == 0)
 	{
 		temp = *lst_a;
-		i = ft_choose_rotate_ab(*lst_a, *lst_b);
+		i = opt_rotate_ab(*lst_a, *lst_b);
 		while (i >= 0)
 		{
 			if (i == rot_ab(*lst_a, *lst_b, obtain_value(temp)))

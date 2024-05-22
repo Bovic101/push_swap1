@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/05/21 13:09:31 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/05/22 01:29:36 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_list(t_list *a);
 void	sort_linklist(t_list **a);
 t_list	*ft_sort_b(t_list **lst_a);
 void	sort_lsta_b(t_list **lst_a, t_list **lst_b);
-int		ft_choose_rotate_ab(t_list *a, t_list *b);
+int		opt_rotate_ab(t_list *a, t_list *b);
 int		search_position_b(t_list *b, int nbr);
 int		search_bigger_value(t_list *lst);
 int		search_smaller_value(t_list *lst);
@@ -54,7 +54,7 @@ int		rev_rot_a_rot_b(t_list **a, t_list **b, int nbr, char s);
 int		rot_a_revrot_b(t_list **a, t_list **b, int nbr, char s);
 t_list	**ft_sort_a(t_list **lst_a, t_list **lst_b);
 t_list	*ft_remove_back(t_list **list);
-int		ft_choose_rotate_ba(t_list *a, t_list *b);
+int		opt_rotate_ba(t_list *a, t_list *b);
 int		move_ra_rrb_a(t_list *a, t_list *b, int nbr);
 int		move_rra_rb_a(t_list *a, t_list *b, int nbr);
 int		rot_ab_a(t_list *a, t_list *b, int nbr);
