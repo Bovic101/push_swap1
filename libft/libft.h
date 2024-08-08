@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 02:10:25 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/07/21 15:05:28 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/08 15:49:29 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+#include <stdbool.h>
+#include <limits.h>
 
 typedef struct s_list
 {
@@ -70,4 +72,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_lstsize(t_list *lst);
 double	ft_atoi_double(const char *str);
+void 	handle_error(const char *str);
+static inline bool is_digit(char c);
+const char *acceptable_input(const char *str);
+long 	ft_atol(const char *str);
 #endif
