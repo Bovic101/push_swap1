@@ -6,7 +6,7 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2024/05/20 02:10:52 by vodebunm         ###   ########.fr        #
+#    Updated: 2024/07/21 15:06:33 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libft.a
 RM = rm -f
 
 # List of source files
-SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_atoi_double.c\
        ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
        ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c \
        ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
