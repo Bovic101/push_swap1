@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/06/01 04:27:20 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/07/26 01:51:22 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,61 @@
 # include "../ft_printf/ft_printf.h"
 # include "../libft/libft.h"
 # include	<stdbool.h>
-#include	<limits.h>
+# include	<limits.h>
+# include <ctype.h>
 
-typedef struct push_swap_stack
+typedef struct s_push_swap_stack
 {
     int data;
     int count;
     int nearval_cal;
     bool nearval;
     bool push_midval;
-    struct push_swap_stack *next;
-    struct push_swap_stack *prevnode;
-    struct push_swap_stack *endpoint_node;
-} t_push_swap_stack;
+    struct s_push_swap_stack *next;
+    struct s_push_swap_stack *prevnode;
+    struct s_push_swap_stack *desired_node;
+}           t_push_swap_stack;
+
 
 void	join_lstnode(t_push_swap_stack **list, int val);
 void	stack_a_init(t_push_swap_stack **a, char **argv);
-
+bool	sorted_stack(t_push_swap_stack *stack);
+void	alt_sorter(t_push_swap_stack **a);
+void    turks_sorter(t_push_swap_stack **a, t_push_swap_stack **b);
+void    index_position(t_push_swap_stack *stack);
+void    assign_t4a(t_push_swap_stack *a, t_push_swap_stack *b);
+void	push_cost4a(t_push_swap_stack *a, t_push_swap_stack *b);
+void    chose_closest_val(t_push_swap_stack *stack);
+void	a_b(t_push_swap_stack **a, t_push_swap_stack **b);
+void    b_a(t_push_swap_stack **a, t_push_swap_stack **b);
+void    rot_ab(t_push_swap_stack **a, t_push_swap_stack **b, t_push_swap_stack *closest_node);
+void    push_activate(t_push_swap_stack **stack, t_push_swap_stack *last_datanode, char stack_variable);
+void    assign_t4b(t_push_swap_stack *a, t_push_swap_stack *b);
+void    data_value(t_push_swap_stack **a);
+void	rra(t_push_swap_stack **a, bool value);
+void	rrb(t_push_swap_stack **b, bool value);
+int     format_check(const char *str);
+void	rrr(t_push_swap_stack **a, t_push_swap_stack **b, bool value);
+void	activate_push (t_push_swap_stack **stack1, t_push_swap_stack **stack2);
+void    pb(t_push_swap_stack **b, t_push_swap_stack **a, bool value);
+void    pa(t_push_swap_stack **a, t_push_swap_stack **b, bool value);
+void    rot_func(t_push_swap_stack **stack);
+void    swap_func(t_push_swap_stack **stack);
+void    sb(t_push_swap_stack **b, bool value);
+void    sa(t_push_swap_stack **a, bool value);
+void    *max_stackval(t_push_swap_stack *stack);
+void	 turk_implement_b(t_push_swap_stack *a, t_push_swap_stack *b);
+void    ss(t_push_swap_stack **a,t_push_swap_stack **b, bool value);
+int     rm_copy(t_push_swap_stack *a, int num);
+void	turk_implement(t_push_swap_stack *a, t_push_swap_stack *b);
+void	free_mystack(t_push_swap_stack **stack);
+void    free_memory(t_push_swap_stack **a);
+void    rb(t_push_swap_stack **b, bool value);
+void    rev_rot_ab(t_push_swap_stack **stack);
+void    ra(t_push_swap_stack **a, bool value);
+t_push_swap_stack *obtain_closest_v(t_push_swap_stack *stack);
+void    *max_stackval(t_push_swap_stack *stack);
+int     get_stack_len(t_push_swap_stack *stack);
+void    rrot_both(t_push_swap_stack **a, t_push_swap_stack **b, t_push_swap_stack *closest_node);
 
 #endif

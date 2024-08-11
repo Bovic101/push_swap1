@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:22:12 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/07/26 01:50:49 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:06:47 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void rev_rot_ab(t_push_swap_stack **stack)
     lastptr->next = *stack; // Move last node to the front
     lastptr->prevnode = NULL;
     (*stack)->prevnode = lastptr;
-    *stack = lastptr; // Update stack head
+    *stack = lastptr; // Update stack headptr
 }
 void	activate_push(t_push_swap_stack **stack1, t_push_swap_stack **stack2)
 {

@@ -6,14 +6,14 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:29:16 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/09 22:28:42 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:07:07 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../push_swap_src/push_swap.h"
 
-void	join_lstnode(t_push_swap_stack **list, int val)// function join a newwode to the end of a linkedlist
+void	join_lstnode(t_push_swap_stack **list, int val)// function to join a newwode to the end of a linked-list
 {
 	t_push_swap_stack	*new_node;
 	t_push_swap_stack	*lst_node;
@@ -43,5 +43,32 @@ void	join_lstnode(t_push_swap_stack **list, int val)// function join a newwode t
 		new_node->prevnode = lst_node;
 	}
 }
-
-
+//Function Loop until the stack pointer reaches the last data node
+void push_activate(t_push_swap_stack **stack, t_push_swap_stack *last_datanode, char stack_variable)
+{
+	while (*stack != last_datanode)
+	{
+		if (stack_variable == 'a')
+		{
+			if (last_datanode->push_midval)// If the stack is 'a' and push_midval is true, rotate up, else rotate down
+			{
+				ra(stack, false);  // Rotate stack 'a' upwards//check
+			}
+			else
+			{
+				rra(stack, false); // Rotate stack 'a' downwards//check
+			}
+		}
+		else if (stack_variable == 'b')
+		{
+			if (last_datanode->push_midval)// If the stack is 'b' and push_midval is true, rotate up, else rotate down
+			{
+				rb(stack, false);  // Rotate stack 'b' upwards//check
+			}
+			else
+			{
+				rrb(stack, false); // Rotate stack 'b' downwards//check
+			}
+		}
+	}
+}

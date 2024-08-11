@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:13:23 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/07/28 16:26:58 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:08:05 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int rm_copy(t_push_swap_stack *a, int num)
 {
     while (a)
     {
-        if (a->data == num) // Check if current node's data matches num
+        if (a->data == num) // Check if current node's data matches number
         {
             return 1; 
         }

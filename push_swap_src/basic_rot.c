@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:18:25 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/07/26 01:51:10 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:06:56 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void rot_ab(t_push_swap_stack **a, t_push_swap_stack **b, t_push_swap_stack *clo
     
     while (*b != closest_node->desired_node && *a != closest_node)
     {
-        rr(a, b, false);//false send the operation message to the fd//done
+        rr(a, b, false);//false send the operation message to the fd
     }
     index_position(*a);  // update the indices/positions of elements in stack
     index_position(*b);
