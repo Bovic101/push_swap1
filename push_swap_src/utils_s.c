@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:24:43 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:08:29 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:26:44 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,28 @@ void *max_stackval(t_push_swap_stack *stack)
     
     return (bigptr);                       // Return the node with the largest value
 }
-void *max_stackval(t_push_swap_stack *stack)
+void *min_stackval(t_push_swap_stack *stack)
 {
     long smallest_val;
     t_push_swap_stack *smallptr = NULL;
-    
+
     if (!stack)
     {
         return (NULL);
     }
-    
-    smallest_val = LONG_MAX;                // Initialize to the higest possible long value
+
+    smallest_val = LONG_MAX;                // Initialize to the highest possible long value
     while (stack)
     {
         if (stack->data < smallest_val)
         {
-            smallest_val = stack->data;     // Update largest value
-            smallptr = stack;                // Update pointer to current largest node
+            smallest_val = stack->data;     // Update smallest value
+            smallptr = stack;               // Update pointer to current smallest node
         }
-        stack = stack->next;               // Move to the next node in the stack
+        stack = stack->next;                // Move to the next node in the stack
     }
-    
-    return (smallest_val);                       // Return the node with the largest value
+
+    return (smallptr);                      // Return the pointer to the node with the smallest value
 }
 // Function to calculate the length of a linked list (stack) in a push_swap program
 int get_stack_len(t_push_swap_stack *stack)

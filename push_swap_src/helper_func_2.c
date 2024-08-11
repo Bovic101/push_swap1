@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:13:23 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:08:05 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:19:32 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,27 +42,35 @@ void	free_mystack(t_push_swap_stack **stack)
 }
 int format_check(const char *str) 
 {
+    // Check if the string is NULL or empty
     if (str == NULL || *str == '\0') 
     {
-        return (1);
+        return 1; // Return 1 for invalid input
     }
-    if (!isdigit(*str) && (*str != '+' && *str != '-') || (str[1] == '\0' && (*str == '+' || *str == '-')))
+
+    // Check for a valid sign character and ensure it is not a standalone character
+    if ((*str == '+' || *str == '-') && *(str + 1) == '\0') 
     {
-        return (1);
+        return 1; // Return 1 if a sign is followed by nothing
     }
-    if (*str == '+' || *str == '-')
+
+    // Move past the sign if present
+    if (*str == '+' || *str == '-') 
     {
         str++;
     }
-    while (*str)
+
+    // Ensure the remaining characters are all digits
+    while (*str) 
     {
-        if (!isdigit(*str)) // Return an error if any character is not a digit
+        if (!isdigit((unsigned char)*str)) 
         {
-            return (1);
+            return 1; // Return 1 if any character is not a digit
         }
         str++;
     }
-    return (0);
+
+    return 0; // Return 0 for a valid input
 }
  void	 turk_implement_b(t_push_swap_stack *a, t_push_swap_stack *b)
  {

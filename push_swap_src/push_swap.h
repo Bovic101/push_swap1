@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 01:04:31 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/07/26 01:51:22 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:23:18 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ void    rb(t_push_swap_stack **b, bool value);
 void    rev_rot_ab(t_push_swap_stack **stack);
 void    ra(t_push_swap_stack **a, bool value);
 t_push_swap_stack *obtain_closest_v(t_push_swap_stack *stack);
-void    *max_stackval(t_push_swap_stack *stack);
+void    *min_stackval(t_push_swap_stack *stack);
 int     get_stack_len(t_push_swap_stack *stack);
+void	rr(t_push_swap_stack **a, t_push_swap_stack **b, bool value);
 void    rrot_both(t_push_swap_stack **a, t_push_swap_stack **b, t_push_swap_stack *closest_node);
 
 #endif

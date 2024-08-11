@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:38:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:07:41 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:24:49 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     // Perform sorting only if the stack is not already sorted
     if (!sorted_stack(a))//done
     {
-        size_t stack_len = length_stack(a);//check
+        size_t stack_len = get_stack_len(a);//check
 
         if (stack_len == 2)
             sa(&a, false);//check
