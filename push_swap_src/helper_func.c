@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:25:32 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:07:02 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:58:41 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,6 @@ void rr(t_push_swap_stack **a, t_push_swap_stack **b, bool value)
     {
         ft_printf("rotation operation of ra and rb\n");
     }
-}
-void rev_rot_ab(t_push_swap_stack **stack)
-{
-    t_push_swap_stack *lastptr;
-    t_push_swap_stack *second_lastptr;
-
-    if (!*stack || !(*stack)->next)
-    {
-        return;
-    }
-    lastptr = *stack; // Search for the last node
-    while (lastptr->next)
-    {
-        lastptr = lastptr->next;
-    }
-    second_lastptr = lastptr->prevnode;// Find the second last node
-    second_lastptr->next = NULL;// detach lstnod
-    lastptr->next = *stack; // Move last node to the front
-    lastptr->prevnode = NULL;
-    (*stack)->prevnode = lastptr;
-    *stack = lastptr; // Update stack head
 }
 void free_memory(t_push_swap_stack **a)
 {

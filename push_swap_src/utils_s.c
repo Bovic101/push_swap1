@@ -6,58 +6,55 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:24:43 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:26:44 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:47:55 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../push_swap_src/push_swap.h"
 
-void *max_stackval(t_push_swap_stack *stack)
+t_push_swap_stack *max_stackval(t_push_swap_stack *stack)
 {
     long biggest_val;
     t_push_swap_stack *bigptr = NULL;
     
     if (!stack)
-    {
-        return (NULL);
-    }
-    
-    biggest_val = LONG_MIN;// Initialize to the smallest possible long value
+        return NULL;
+
+    biggest_val = LONG_MIN;
     while (stack)
     {
         if (stack->data > biggest_val)
         {
-            biggest_val = stack->data;   // Update largest value
-            bigptr = stack;                // Update pointer to current largest node
+            biggest_val = stack->data;
+            bigptr = stack;
         }
-        stack = stack->next;               // Move to the next node in the stack
+        stack = stack->next;
     }
     
-    return (bigptr);                       // Return the node with the largest value
+    return bigptr;
 }
-void *min_stackval(t_push_swap_stack *stack)
+
+t_push_swap_stack *min_stackval(t_push_swap_stack *stack)
 {
     long smallest_val;
     t_push_swap_stack *smallptr = NULL;
 
     if (!stack)
-    {
-        return (NULL);
-    }
+        return NULL;
 
-    smallest_val = LONG_MAX;                // Initialize to the highest possible long value
+    smallest_val = LONG_MAX;
     while (stack)
     {
         if (stack->data < smallest_val)
         {
-            smallest_val = stack->data;     // Update smallest value
-            smallptr = stack;               // Update pointer to current smallest node
+            smallest_val = stack->data;
+            smallptr = stack;
         }
-        stack = stack->next;                // Move to the next node in the stack
+        stack = stack->next;
     }
 
-    return (smallptr);                      // Return the pointer to the node with the smallest value
+    return smallptr;
 }
 // Function to calculate the length of a linked list (stack) in a push_swap program
 int get_stack_len(t_push_swap_stack *stack)

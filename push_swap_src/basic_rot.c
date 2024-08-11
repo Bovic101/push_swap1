@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:18:25 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:06:56 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/08/11 02:57:35 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,6 @@ void	rrr(t_push_swap_stack **a, t_push_swap_stack **b, bool value)
 {
 	rev_rot_ab(a);
 	rev_rot_ab(b);
-	if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("reverse rotate both stack\n");
-    }
-}
-void	rr(t_push_swap_stack **a, t_push_swap_stack **b, bool value)
-{
-	rot_func(a);
-	rot_func(b);
 	if (!value)// If the 'value' flag is false, print the operation message
     {
         ft_printf("reverse rotate both stack\n");
