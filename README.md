@@ -85,7 +85,7 @@ For a simple demonstration with an unsorted input, use:
 ./manual_sort_test.sh 8 7 6 5 4 3 2 1
 ```
 
-The script can be usedd to demonstrate the program with an unsorted random input . You can generate random number by visit https://numbergenerator.org/
+The script can be usedd to demonstrate the program with an unsorted random input . You can generate random number by visit [https://numbergenerator.org/](https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php)
 
 You can also demonstrate a manually chosen input directly:
 
