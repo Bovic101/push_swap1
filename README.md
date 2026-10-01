@@ -22,7 +22,23 @@ The implementation uses a **cost-based / Turk-style strategy**. For each candida
 - `checker_linux` for verification
 - `valgrind` for memory testing
 
-## Compilation
+## Compilation Step 1
+"""
+
+new = """## Clone the Repository
+
+Clone the project and enter the project directory:
+
+```bash
+git clone https://github.com/Bovic101/push_swap1.git
+cd push_swap
+```
+
+```bash
+cd <repository-directory>
+```
+
+## Compilation Step 2
 
 From the project directory:
 
