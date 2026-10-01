@@ -25,7 +25,7 @@ The implementation uses a **cost-based / Turk-style strategy**. For each candida
 ## Compilation Step 1
 """
 
-new = """## Clone the Repository
+## Clone the Repository
 
 Clone the project and enter the project directory:
 
@@ -35,7 +35,7 @@ cd push_swap
 ```
 
 ```bash
-cd <repository-directory>
+cd push_swap1
 ```
 
 ## Compilation Step 2
