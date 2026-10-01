@@ -41,6 +41,9 @@ From the project directory:
 
 ```bash
 make
+chmod +x manual_sort_test.sh
+chmod +x push_swap_test_linux.sh
+
 ```
 
 Other Makefile commands:
