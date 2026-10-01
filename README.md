@@ -395,7 +395,7 @@ ERROR SUMMARY: 0 errors from 0 contexts
 push_swap/
 ├── Makefile
 ├── README.md
-├── demo.sh
+├── manual_sort_test.sh
 ├── push_swap_test_linux.sh
 ├── checker_linux
 ├── push_swap_src/
