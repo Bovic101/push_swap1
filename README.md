@@ -23,8 +23,6 @@ The implementation uses a **cost-based / Turk-style strategy**. For each candida
 - `valgrind` for memory testing
 
 ## Compilation Step 1
-"""
-
 ## Clone the Repository
 
 Clone the project and enter the project directory:
