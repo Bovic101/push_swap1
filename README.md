@@ -392,7 +392,7 @@ ERROR SUMMARY: 0 errors from 0 contexts
 ## Project Structure
 
 ```text
-push_swap/
+push_swap1/
 ├── Makefile
 ├── README.md
 ├── manual_sort_test.sh
