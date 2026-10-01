@@ -3,63 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: victor-odebunmi <victor-odebunmi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:38:40 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:46:37 by vodebunm         ###   ########.fr       */
+/*   Updated: 2026/10/01 18:26:31 by victor-odeb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_push_swap_stack *a;
-    t_push_swap_stack *b;
-    char **args = argv;  // Default to argv unless we split
+	t_push_swap_stack	*a;
+	t_push_swap_stack	*b;
+	char				**args;
+	bool				split;
+	size_t				stack_len;
 
-    a = NULL;
-    b = NULL;
-
-    if (argc < 2 || (argc == 2 && !argv[1][0])) // Handle cases with no input or empty argument
-        return (1);
-
-    if (argc == 2) // If a single argument is provided, split it into multiple arguments
-    {
-        args = ft_split(argv[1], ' ');
-        if (!args) // Handle memory allocation failure
-            return (1);
-    }
-
-    // Initialize stack 'a' with the provided arguments
-    stack_a_init(&a, args);  // Corrected: Pass all arguments, not args + 1
-    if (!a)  // Check if initialization failed by checking if 'a' is NULL
-    {
-        if (argc == 2)  // Free args only if it was split
-            free(args);
-        return (1);
-    }
-
-    // Perform sorting only if the stack is not already sorted
-    if (!sorted_stack(a))
-    {
-        size_t stack_len = get_stack_len(a);
-
-        if (stack_len == 2)
-            sa(&a, false);
-        else if (stack_len == 3)
-            alt_sorter(&a);
-        else
-            turks_sorter(&a, &b);
-    }
-
-    // Free the stacks and args if it was allocated by ft_split
-    free_mystack(&a); // Free stack 'a'
-    free_mystack(&b); // Free stack 'b'
-    if (argc == 2)
-        free(args);
-
-    return (0);
+	a = NULL;
+	b = NULL;
+	args = NULL;
+	split = false;
+	if (argc < 2)
+		return (0);
+	if (argc == 2)
+	{
+		if (!argv[1][0])
+			return (0);
+		args = ft_split(argv[1], ' ');
+		if (!args || !args[0])
+		{
+			free_split(args);
+			ft_putstr_fd("Error\n", 2);
+			return (1);
+		}
+		split = true;
+	}
+	else
+		args = argv + 1;
+	stack_a_init(&a, args);
+	if (!a)
+	{
+		if (split)
+			free_split(args);
+		return (1);
+	}
+	if (!sorted_stack(a))
+	{
+		stack_len = get_stack_len(a);
+		if (stack_len == 2)
+			sa(&a, false);
+		else if (stack_len == 3)
+			alt_sorter(&a);
+		else
+			turks_sorter(&a, &b);
+	}
+	free_mystack(&a);
+	free_mystack(&b);
+	if (split)
+		free_split(args);
+	return (0);
 }
 
 

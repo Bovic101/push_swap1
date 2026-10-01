@@ -3,54 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   rot_extra.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: victor-odebunmi <victor-odebunmi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 09:53:09 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:07:48 by vodebunm         ###   ########.fr       */
+/*   Updated: 2026/10/01 17:19:07 by victor-odeb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
 
-//arranging of function into seperate file
-void ra(t_push_swap_stack **a, bool value)
+void	ra(t_push_swap_stack **a, bool value)
 {
-    rot_func(a);
-    if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("The first element becomes the last one\n");
-    }
+	rot_func(a);
+	if (!value)
+		ft_printf("ra\n");
 }
-void rb(t_push_swap_stack **b, bool value)
+
+void	rb(t_push_swap_stack **b, bool value)
 {
-    rot_func(b);
-    if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("The first element becomes the last one, shift elm by 1\n");
-    }
+	rot_func(b);
+	if (!value)
+		ft_printf("rb\n");
 }
-void ss(t_push_swap_stack **a,t_push_swap_stack **b, bool value)
+
+void	sa(t_push_swap_stack **a, bool value)
 {
-    swap_func(a);
+	swap_func(a);
+	if (!value)
+		ft_printf("sa\n");
+}
+
+void	sb(t_push_swap_stack **b, bool value)
+{
 	swap_func(b);
-    if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("swap a and b at same time\n");
-    }
+	if (!value)
+		ft_printf("sb\n");
 }
-void sa(t_push_swap_stack **a, bool value)
+
+void	ss(t_push_swap_stack **a, t_push_swap_stack **b, bool value)
 {
-    swap_func(a);
-    if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("swap a\n");
-    }
-}
-void sb(t_push_swap_stack **b, bool value)
-{
-    swap_func(b);
-    if (!value)// If the 'value' flag is false, print the operation message
-    {
-        ft_printf("swap b\n");
-    }
+	swap_func(a);
+	swap_func(b);
+	if (!value)
+		ft_printf("ss\n");
 }

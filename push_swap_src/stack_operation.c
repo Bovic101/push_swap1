@@ -3,118 +3,132 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: victor-odebunmi <victor-odebunmi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:30:42 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/08/11 02:48:46 by vodebunm         ###   ########.fr       */
+/*   Updated: 2026/10/01 18:27:41 by victor-odeb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_src/push_swap.h"
 
-void stack_a_init(t_push_swap_stack **a, char **argv)
+static int	parse_number(const char *str, int *value)
 {
-    int     i;
-    long    value;
+	int			sign;
+	long long	num;
+	long long	limit;
 
-    i = 0;
-    while (argv[i])
-    {
-        value = ft_atol(argv[i]);
-
-        // Check for format errors, out-of-bounds values, and duplicates
-        if (format_check(argv[i]) ||
-            value > INT_MAX || value < INT_MIN ||
-            rm_copy(*a, (int)value))
-        {
-            free_memory(a);  // Free the stack if any check fails
-            *a = NULL;       // Set the stack pointer to NULL to indicate failure
-            return;
-        }
-
-        join_lstnode(a, (int)value);  // Add the value to the stack
-        i++;
-    }
+	if (format_check(str))
+		return (1);
+	sign = 1;
+	num = 0;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	if (sign < 0)
+		limit = -(long long)INT_MIN;
+	else
+		limit = INT_MAX;
+	while (*str)
+	{
+		if (num > (limit - (*str - '0')) / 10)
+			return (1);
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	*value = (int)(num * sign);
+	return (0);
 }
 
-bool sorted_stack(t_push_swap_stack *stack)
+void	stack_a_init(t_push_swap_stack **a, char **argv)
 {
-    if (!stack)
-    {
-        return true;
-    }
-    while (stack->next)
-    {
-        if (stack->data > stack->next->data)
-        {
-            return false;
-        }
-        stack = stack->next; 
-    }
-    return true;
-}
-void alt_sorter(t_push_swap_stack **a)
-{
-    t_push_swap_stack *maxval;//pointer to the highest node
-    
-    maxval = max_stackval(*a); //function returns a pointer to the node with the max value.//check
-    
-    if (maxval == *a)
-    {
-        ra(a, false); // Rotate if the max value is at the top of the stack
-    }
-    else if ((*a)->next == maxval)
-    {
-        rra(a, false); // Reverse rotate if the max value is next in the stack
-    }
-    
-    if ((*a)->data > (*a)->next->data)
-    {
-        sa(a, false); // Swap the first two elements if the first one is larger than the second
-    }
-}
-void turks_sorter(t_push_swap_stack **a, t_push_swap_stack **b)
-{
-    int a_length;
+	int	i;
+	int	value;
 
-    a_length = get_stack_len(*a);
-
-    if (a_length-- > 3 && !sorted_stack(*a))
-        pb(b, a, false);
-
-    if (a_length-- > 3 && !sorted_stack(*a))
-        pb(b, a, false);
-
-    while (a_length-- > 3 && !sorted_stack(*a))
-    {
-        turk_implement(*a, *b);
-        a_b(a, b);
-    }
-
-    alt_sorter(a);
-    while (*b)
-    {
-        turk_implement_b(*a, *b);
-        b_a(a, b);
-    }
-    index_position(*a);
-    data_value(a);
+	i = 0;
+	while (argv[i])
+	{
+		if (parse_number(argv[i], &value) || rm_copy(*a, value))
+		{
+			free_mystack(a);
+			ft_putstr_fd("Error\n", 2);
+			return ;
+		}
+		join_lstnode(a, value);
+		if (!*a)
+			return ;
+		i++;
+	}
 }
 
-void data_value(t_push_swap_stack **a)//check smallest value athe top
+bool	sorted_stack(t_push_swap_stack *stack)
 {
-    t_push_swap_stack *min_val;
+	while (stack && stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
 
-    min_val = min_stackval(*a);
-    while ((*a)->data != min_val->data) // Rotate until the minimum value is at the top of the stack
-    {
-        if (min_val->push_midval)
-        {
-            ra(a, false);
-        }
-        else
-        {
-            rra(a, false);
-        }
-    }
+void	alt_sorter(t_push_swap_stack **a)
+{
+	t_push_swap_stack	*maxval;
+
+	if (!a || !*a || !(*a)->next)
+		return ;
+	maxval = max_stackval(*a);
+	if (maxval == *a)
+		ra(a, false);
+	else if (maxval == (*a)->next)
+		rra(a, false);
+	if ((*a)->data > (*a)->next->data)
+		sa(a, false);
+}
+
+void	turks_sorter(t_push_swap_stack **a, t_push_swap_stack **b)
+{
+	int	a_length;
+
+	if (!a || !*a || !b)
+		return ;
+	a_length = get_stack_len(*a);
+	if (a_length-- > 3 && !sorted_stack(*a))
+		pb(b, a, false);
+	if (a_length-- > 3 && !sorted_stack(*a))
+		pb(b, a, false);
+	while (a_length-- > 3 && !sorted_stack(*a))
+	{
+		turk_implement(*a, *b);
+		a_b(a, b);
+	}
+	alt_sorter(a);
+	while (*b)
+	{
+		turk_implement_b(*a, *b);
+		b_a(a, b);
+	}
+	index_position(*a);
+	data_value(a);
+}
+
+void	data_value(t_push_swap_stack **a)
+{
+	t_push_swap_stack	*min_val;
+
+	if (!a || !*a)
+		return ;
+	index_position(*a);
+	min_val = min_stackval(*a);
+	while (*a != min_val)
+	{
+		if (min_val->push_midval)
+			ra(a, false);
+		else
+			rra(a, false);
+	}
 }
